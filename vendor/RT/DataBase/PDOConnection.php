@@ -15,13 +15,15 @@ class PDOConnection implements IDbContext
         $this->password=$password;
         try
         {
-            $this->database=new \PDO($this->datasource,$this->username,$this->password);
-            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $this->con=new \PDO($datasource,$username,$password);
+          
+            $this->con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         }
         catch(PDOException $e)
         {
             echo "connection can't be established " . $e->getMessage();
         }
+
     }
     public function exeNonQuery(string $query=''):bool
     {

@@ -31,7 +31,7 @@ class MySqlConnection implements IDbContext
     public function exeNonQuery(string $query='')
     {
         
-        if(!$query=='')   {
+        if($query=='')   {
 
             die('Sorry query must not be empty');
 
@@ -41,7 +41,7 @@ class MySqlConnection implements IDbContext
 
     public function dbSet(string $query='')
     {
-        if(!$query=='') {
+        if($query=='') {
 
             die('Sorry query must not be empty');
         }

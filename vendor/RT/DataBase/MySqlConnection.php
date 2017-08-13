@@ -1,7 +1,8 @@
 <?php
 namespace RT\DataBase;
 
-class MySqlConnection{
+class MySqlConnection implements IDbContext
+{
 
     public $hostname;
     public $username;

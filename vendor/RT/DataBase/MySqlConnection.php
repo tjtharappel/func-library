@@ -7,9 +7,9 @@ class MySqlConnection{
     public $username;
     public $password;
 
-    public $db;
+    private $db;
     
-    public  function __construct($hostname=null, $username=null, $password=null, $db=null)
+    public  function __construct(string $hostname,string $username,string $password,string $db)
     {
 
         $this->hostname = $hostname;
@@ -27,10 +27,10 @@ class MySqlConnection{
         }
     }
 
-    public function exeNonQuery($query)
+    public function exeNonQuery(string $query='')
     {
         
-        if(!$query)   {
+        if(!$query=='')   {
 
             die('Sorry query must not be empty');
 
@@ -38,9 +38,9 @@ class MySqlConnection{
        return ($this->db->query($query));
     }
 
-    public function dbSet($query=null)
+    public function dbSet(string $query='')
     {
-        if(!$query=null) {
+        if(!$query=='') {
 
             die('Sorry query must not be empty');
         }

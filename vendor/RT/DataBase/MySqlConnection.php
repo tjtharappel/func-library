@@ -1,7 +1,8 @@
 <?php
 namespace RT\DataBase;
 
-class MySqlConnection{
+class MySqlConnection implements IDbContext
+{
 
     public $hostname;
     public $username;
@@ -30,7 +31,7 @@ class MySqlConnection{
     public function exeNonQuery(string $query='')
     {
         
-        if(!$query=='')   {
+        if($query=='')   {
 
             die('Sorry query must not be empty');
 
@@ -40,7 +41,7 @@ class MySqlConnection{
 
     public function dbSet(string $query='')
     {
-        if(!$query=='') {
+        if($query=='') {
 
             die('Sorry query must not be empty');
         }

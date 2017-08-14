@@ -3,8 +3,8 @@ namespace RT\Entities;
 
 class User
 {
-    public $userid;
-    public $username;
-    public $password;
-    public $email;
+    public $userid=null;
+    public $username=null;
+    public $password=null;
+    public $email=null;
 }

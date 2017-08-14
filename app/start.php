@@ -19,5 +19,3 @@ $db=new DbContext('localhost','root','','study');
 $pdo=new PDOConnection(new PDO('mysql:host=localhost;dbname=study','root',''));
 
 query($pdo,"insert into login values('PDO','PDO')");
-
-

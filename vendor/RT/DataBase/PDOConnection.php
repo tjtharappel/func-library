@@ -27,8 +27,7 @@ class PDOConnection implements IDbContext
     }
     public function exeNonQuery(string $query=''):bool
     {
-        if($query=='')  {
-
+        if ($query==''){
             throw new Exception("query can't be empty");
             return false;
         }
@@ -37,8 +36,7 @@ class PDOConnection implements IDbContext
     }
     public function DbSet(string $query=''):array
     {
-        if($query=='')  {
-            
+        if ($query==''){
             throw new Exception("query can't be empty");
             return false;
         }

@@ -7,4 +7,5 @@ class User
     public $username=null;
     public $password=null;
     public $email=null;
+    public $hashvalue;
 }

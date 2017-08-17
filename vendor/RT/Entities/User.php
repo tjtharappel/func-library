@@ -8,4 +8,5 @@ class User
     public $password=null;
     public $email=null;
     public $hashvalue;
+    public $commit;
 }

@@ -8,16 +8,16 @@ class PDOConnection implements IDbContext
     public $password;
 
     private $con;
-    public function __construct(string $datasource,string $username,string $password)
+    public function __construct($db)
     {
-        $this->datasource=$datasource;
-        $this->username=$username;
-        $this->password=$password;
+        //$this->datasource=$datasource;
+       // $this->username=$username;
+        //$this->password=$password;
         try
         {
-            $this->con=new \PDO($datasource,$username,$password);
-          
-            $this->con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            //$this->con=new \PDO($datasource,$username,$password);
+            $this->con=$db;
+            //$this->con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         }
         catch(PDOException $e)
         {
@@ -27,8 +27,7 @@ class PDOConnection implements IDbContext
     }
     public function exeNonQuery(string $query=''):bool
     {
-        if($query=='')  {
-
+        if ($query==''){
             throw new Exception("query can't be empty");
             return false;
         }
@@ -37,8 +36,7 @@ class PDOConnection implements IDbContext
     }
     public function DbSet(string $query=''):array
     {
-        if($query=='')  {
-            
+        if ($query==''){
             throw new Exception("query can't be empty");
             return false;
         }

@@ -11,12 +11,11 @@ function query(IDbContext $Db,string $query)
 {
     $Db->exeNonQuery($query);
 }
+
 $db=new DbContext('localhost','root','','study');
 
 //query($db,"insert into login values('tomin','tomin')");
 
-$pdo=new PDOConnection('mysql:host=localhost;dbname=study','root','');
+$pdo=new PDOConnection(new PDO('mysql:host=localhost;dbname=study','root',''));
 
 query($pdo,"insert into login values('PDO','PDO')");
-
-

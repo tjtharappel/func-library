@@ -10,7 +10,7 @@ class MySqlConnection implements IDbContext
 
     private $db;
     
-    public  function __construct(string $hostname,string $username,string $password,string $db)
+    public  function __construct(string $hostname, string $username, string $password, string $db)
     {
 
         $this->hostname = $hostname;
@@ -31,21 +31,17 @@ class MySqlConnection implements IDbContext
     public function exeNonQuery(string $query='')
     {
         
-        if($query=='')   {
-
+        if ($query==''){
             die('Sorry query must not be empty');
-
         }
        return ($this->db->query($query));
     }
 
     public function dbSet(string $query='')
     {
-        if($query=='') {
-
+        if ($query==''){
             die('Sorry query must not be empty');
         }
         return ($this->db->query($query));
     }
-    
 }
